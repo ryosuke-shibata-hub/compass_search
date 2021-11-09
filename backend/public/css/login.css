@@ -1,0 +1,52 @@
+div.Form {
+    padding-left: 50px;
+}
+
+div.login_email {
+    padding-left: 300px;
+    font-size: 1.7rem;
+    padding-top: 100px;
+}
+
+div.login_pass {
+    padding-left: 300px;
+    font-size: 1.7rem;
+
+}
+
+input[type=text],
+input[type=password] {
+
+    display: block;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 0px;
+    width: 350px;
+    height: 30px;
+}
+
+
+div.login {
+    padding-top: 30px;
+    margin-left: 630px;
+}
+
+.create_acount {
+    padding-top: 50px;
+    text-align: center;
+
+}
+
+a {
+    text-decoration: none;
+    color: #0000ff;
+}
+
+input[type=submit] {
+    color: #fff;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 70px;
+}
