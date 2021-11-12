@@ -7,11 +7,11 @@
   <div class="title">
   ログイン
   </div>
-  {{ Form::open() }}
+  {{ Form::open(['method'=>'post']) }}
     <div class="Form">
       <div class="login_email">
       {{ Form::label('メールアドレス') }}
-      {{ Form::text('email',null,['class'=>'input','value'=>'login_email']) }}
+      {{ Form::text('email',null,['class'=>'input']) }}
     </div>
     <div class="login_pass">
       {{ Form::label('パスワード') }}

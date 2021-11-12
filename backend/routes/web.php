@@ -21,9 +21,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Auth::routes();
 
 Route::get('/login', 'Auth\Login\LoginController@Login')->name('login');
-Route::post('/login', 'Auth\Login\LoginController@Login');
+Route::post('/login', 'Auth\Login\LoginController@Login')->name('login');
 
 Route::get('/register','Auth\Register\RegisterConfirmController@register');
 Route::post('/register','Auth\Register\RegisterController@create');
 
 Route::get('/added','Auth\Register\RegisterAddedController@added');
+
+Route::group(['middleware' =>['auth']], function(){
+
+Route::get('/top','Admin\User\UsersController@view');
+Route::post('/top','Admin\User\UsersController@view');
+
+});
