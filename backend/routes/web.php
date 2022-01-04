@@ -11,26 +11,22 @@
 |
 */
 
+Route::middleware(['guest'])->group(function () {
 
-
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/home', 'HomeController@index')->name('home');
-
-// Auth::routes();
-
-Route::get('/login', 'Auth\Login\LoginController@Login')->name('login');
-Route::post('/login', 'Auth\Login\LoginController@Login')->name('login');
-
-Route::get('/register','Auth\Register\RegisterConfirmController@register');
-Route::post('/register','Auth\Register\RegisterController@create');
-
-Route::get('/added','Auth\Register\RegisterAddedController@added');
-
-Route::group(['middleware' =>['auth']], function(){
-
-Route::get('/top','Admin\User\UsersController@view');
-Route::post('/top','Admin\User\UsersController@view');
-
+    Route::namespace('Auth')->group(function() {
+        Route::namespace('Login')->group(function() {
+            Route::get('/','LoginController@index')
+            ->name('loginForm');
+            Route::post('/','LoginController@login')
+            ->name('login');
+        });
+        Route::namespace('Register')->group(function() {
+            Route::get('/register','RegisterController@index')
+            ->name('RegisterForm');
+            Route::post('/register','RegisterController@register')
+            ->name('register');
+            Route::get('/registerAdded','RegisterController@added')
+            ->name('registerAdded');
+        });
+    });
 });
