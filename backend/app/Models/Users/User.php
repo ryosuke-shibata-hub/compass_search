@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -16,13 +17,9 @@ class User extends Authenticatable
         'created_at',
         'updated_at',
         'deleted_at',
+        'birthday',
+        'admission_date',
     ];
-
-    // protected $dates = [
-    //     'birthday_year',
-    //     'birthday_moon',
-    //     'birthday_day'
-    // ];
 
     protected $fillable = [
         'user_id',
@@ -37,4 +34,23 @@ class User extends Authenticatable
         'password',
         'role',
     ];
+
+    public function score() {
+        return $this->hasMany('App\Models\Users\UserScore','user_id');
+    }
+
+    public function teacher() {
+        return $this->hasmany('App\Models\Users\UserPersonCharge','user_id');
+    }
+
+    public static function UserQuery() {
+        return self::with([
+            'score',
+            'teacher',
+        ]);
+    }
+
+    public static function user_list() {
+        return self::UserQuery()->take(5)->get();
+    }
 }

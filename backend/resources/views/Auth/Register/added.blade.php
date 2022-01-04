@@ -1,6 +1,6 @@
-@extends('layouts.common')
+@extends('Auth.layouts.common')
 @section('title', 'Added')
-@include('layouts.header')
+@include('Auth.layouts.header')
 @section('content')
 
 <div class="container">
@@ -8,7 +8,7 @@
     <div class="col-md-12 col-md-offset-2">
       <h2 class="text-center pt-5 pb-5">登録が完了しました</h2>
       <h2 class="text-center pt-5 pb-5">ようこそ</h2>
-      <h1 class="text-center pt-5 pb-5">さん！</h1>
+      <h1 class="text-center pt-5 pb-5">{{ session('firstname') }}さん！</h1>
 
       <div class="text-center pt-5 pb-5">
         <a type="submit" href="{{ route('login') }}"
@@ -20,4 +20,4 @@
   </div>
 </div>
 @endsection
-@include('layouts.footer')
+@include('Auth.layouts.footer')

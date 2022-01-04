@@ -1,6 +1,6 @@
-@extends('layouts.common')
+@extends('Auth.layouts.common')
 @section('title', 'Login')
-@include('layouts.header')
+@include('Auth.layouts.header')
 @section('content')
 <div class="container">
   <div class="row">
@@ -35,4 +35,4 @@
   </div>
 </div>
 @endsection
-@include('layouts.footer')
+@include('Auth.layouts.footer')

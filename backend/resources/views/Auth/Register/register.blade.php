@@ -1,6 +1,6 @@
-@extends('layouts.common')
+@extends('Auth.layouts.common')
 @section('title', 'Register')
-@include('layouts.header')
+@include('Auth.layouts.header')
 @section('content')
 
 <div class="container">
@@ -23,30 +23,30 @@
           <input type="text" name="lastname_kana" placeholder="メイ">
         </div>
         <div class="form-group pb-3" style="margin-left: 32%">
-          <label for="username">生年月日</label>
+          <label for="username">生年月日 *例 yyyy/mm/dd</label>
           <br>
-          <input type="text" name="birthday_year" placeholder="年"
+          <input type="text" name="birthday_year" placeholder="yyyy"
                   style="width: 50px;">
-          <input type="text" name="birthday_month" placeholder="月"
+          <input type="text" name="birthday_month" placeholder="mm"
                   style="width: 165px;">
-          <input type="text" name="birthday_day" placeholder="日"
+          <input type="text" name="birthday_day" placeholder="dd"
                   style="width: 170px;">
         </div>
         <div class="form-group pb-3" style="margin-left: 32%">
-          <label for="admission_data">入学日</label>
+          <label for="admission_data">入学日 *例 yyyy/mm/dd</label>
           <br>
-          <input type="text" name="admission_year" placeholder="年"
+          <input type="text" name="admission_year" placeholder="yyyy"
                   style="width: 50px;">
-          <input type="text" name="admission_month" placeholder="月"
+          <input type="text" name="admission_month" placeholder="mm"
                   style="width: 165px;">
-          <input type="text" name="admission_day" placeholder="日"
+          <input type="text" name="admission_day" placeholder="dd"
                   style="width: 170px;">
         </div>
         <div class="form-group pb-3" style="margin-left: 32%">
           <label for="gender">男性</label>
-          <input type="radio" name="gender" value="1">
+          <input type="radio" name="gender" value="0">
           <label for="gender">女性</label>
-          <input type="radio" name="gender" value="2">
+          <input type="radio" name="gender" value="1">
         </div>
         <div class="form-group pb-5" style="margin-left: 32%">
           <label for="email">メールアドレス</label>
@@ -83,4 +83,4 @@
   </div>
 </div>
 @endsection
-@include('layouts.footer')
+@include('Auth.layouts.footer')

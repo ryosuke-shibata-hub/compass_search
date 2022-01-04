@@ -30,3 +30,17 @@ Route::middleware(['guest'])->group(function () {
         });
     });
 });
+
+Route::middleware(['auth'])->group(function () {
+    Route::namespace('Auth')->group(function() {
+        Route::namespace('Login')->group(function() {
+            Route::get('/logout','LoginController@logout')
+            ->name('logout');
+        });
+    });
+    Route::namespace('Admin')->group(function() {
+        Route::namespace('User')->group(function() {
+            Route::resource('top','UserController');
+        });
+    }) ;
+});
