@@ -5,7 +5,7 @@ namespace App\Models\Users;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
@@ -39,14 +39,22 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Users\UserScore','user_id');
     }
 
-    public function teacher() {
-        return $this->hasmany('App\Models\Users\UserPersonCharge','user_id');
+    public function math_teacher() {
+
+        return $this->hasMany('App\Models\Users\UserPersonCharge')
+        ->join('users','user_person_charges.math_teacher_user_id',"=",'users.id');
     }
 
+     public function japanese_language() {
+
+        return $this->hasMany('App\Models\Users\UserPersonCharge')
+        ->join('users','user_person_charges.japanese_language_user_id',"=",'users.id');
+    }
     public static function UserQuery() {
         return self::with([
             'score',
-            'teacher',
+            'math_teacher',
+            'japanese_language',
         ]);
     }
 

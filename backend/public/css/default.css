@@ -34,3 +34,25 @@ body {
     margin-left: 80%;
     margin-top: -4%;
 }
+
+.paginate {
+    margin-left: 30%;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+
+.user_content {
+    display: inline-block;
+    justify-content: space-between;
+    padding-left: 20%;
+    padding-right: 10%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.open-btn {
+    padding-left: 85%;
+    font-size: 1.5rem;
+    padding-bottom: 50px;
+}

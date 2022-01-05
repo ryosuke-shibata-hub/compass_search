@@ -12,11 +12,9 @@
 <body>
   @yield('header')
   <div class="container">
-    <div class="row">
       <div class="col-md-12 col-md-offset-2">
         @yield('content')
       </div>
-    </div>
   </div>
   @yield('footer')
 </body>
