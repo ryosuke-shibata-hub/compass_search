@@ -5,9 +5,13 @@
 <div class="main">
     <div class="container">
       <h2 class="pt-5 pb-5">ユーザー一覧</h2>
-      <div class="open-btn">
+      <a class="open-btn" href="#serach">
         <i class="fas fa-search"></i>
-        詳細検索</div>
+        詳細検索
+      </a>
+      <section id="search">
+        <h2>てすと</h2>
+      </section>
       <tbody>
         @foreach($user_list as $list)
         <div class="user_content">
