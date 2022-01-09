@@ -17,7 +17,13 @@ class UserController extends Controller
 
         $user_list = User::paginate(10);
 
+        $CODE_VALUE = array();
+
+
+        // dd($CODE_VALUE);
+
         return view('Admin.view.topview')
-        ->with('user_list',$user_list);
+        ->with('user_list',$user_list)
+        ->with("CODE_VALUE",$CODE_VALUE);
     }
 }
